@@ -1,5 +1,6 @@
 package simulatedSoccerGame;
 import java.util.*;
+import java.util.concurrent.TimeUnit;
 
 public class main {
 			
@@ -7,6 +8,7 @@ public class main {
 				
 		Random random = new Random();
 		Scanner scanner = new Scanner(System.in);
+		int gametime =0;
 				
 		System.out.println("5v5 Simulated Game");
 		System.out.println("Rules: ");
@@ -26,8 +28,34 @@ public class main {
 		System.out.printf("\nWelcome %s (R team) and %s (B team) to the Goochland Grand Finals, the winner of this game will win the cup!", soccerteamOne.teamname, soccerteamTwo.teamname);
 			
 		
-		System.out.println(soccerteamOne.cputeam);
-		System.out.println(soccerteamTwo.cputeam);
+		
+		int i = 3;
+		int time = 3;
+		
+		System.out.println("\nThe game starts in...");
+		
+		do {
+			System.out.println(time +  "!" );
+			time = time - 1;
+			i = i-1;
+			try {
+				
+				TimeUnit.MILLISECONDS.sleep(1000);
+				
+			} catch(InterruptedException ex) {
+			}
+		} while(i>=1);
+		
+		System.out.println("The match begins!");
+			
+		
+		
+
+			
+			
+			
+			
+
 				
 		
 				
