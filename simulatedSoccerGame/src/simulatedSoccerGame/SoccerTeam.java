@@ -60,13 +60,11 @@ public class SoccerTeam {
 		userRollOpp = random.nextInt(6) +1;
 		
 		if (userRollMain >=2) {
-			System.out.println("Looks like the foul was clean and no card will be given\n");
+			System.out.println("Looks like the foul was clean and no card will be given.\n");
 		} else if(userRollMain == 1) {
 			int playerRandom = random.nextInt(4);
 			System.out.println("A bad foul from " + this.cputeam.get(playerRandom) + " has offered an opportunity for the opposing team to score a penalty!\n" );
 			this.cputeam.remove(playerRandom);
-			chance_penalty();
-			
 		}
 		
 	}
@@ -77,7 +75,15 @@ public class SoccerTeam {
 	}
 	void chance_penalty() {
 		userRollMain = random.nextInt(6) +1;
-		userRollOpp = random.nextInt(6) +1;
+		int playerRandom =  random.nextInt(4);
+		
+		if(userRollMain == 6) {
+			System.out.println(this.cputeam.get(playerRandom) + " has scored the penalty!\n");
+			this.goals++;
+			
+		} else if (userRollMain == 1){
+			System.out.println(this.cputeam.get(playerRandom) + " has missed the penalty!\n");
+		} 
 		
 	}
 	void chance_freekick() {
@@ -89,7 +95,7 @@ public class SoccerTeam {
 			
 			System.out.println(this.cputeam.get(playerRandom) + " has scored the freekick!\n");
 			this.goals ++;
-		} else {
+		} else if (userRollMain == 1){
 			System.out.println(this.cputeam.get(playerRandom) + " has missed the freekick!\n");
 		}
 		
@@ -103,4 +109,5 @@ public class SoccerTeam {
 			System.out.println("The player " + this.cputeam.get(playerRandom) + " has gotten injured and no card was given!\n" );
 			
 	}
-}
+		
+	}

@@ -18,10 +18,12 @@ public class main {
 				
 		System.out.println("What do you want to name your team, player One? ");
 		String playerOneTeam = scanner.nextLine();
+		playerOneTeam = playerOneTeam.trim();
 		SoccerTeam soccerteamOne = new SoccerTeam(playerOneTeam); 
 				
 		System.out.println("What do you want to name your team, player Two? ");
 		String playerTwoTeam = scanner.nextLine(); 
+		playerTwoTeam = playerTwoTeam.trim();
 		SoccerTeam soccerteamTwo = new SoccerTeam(playerTwoTeam); 
 				
 				
@@ -63,7 +65,7 @@ public class main {
 				switch(situationRoll) {
 				case 1: soccerteamOne.chance_goal();
 					break;
-				case 2: soccerteamOne.chance_foul();
+				case 2: soccerteamOne.chance_penalty();
 					break;
 				case 3: soccerteamOne.chance_freekick();
 					break;
@@ -87,7 +89,7 @@ public class main {
 					break;
 				case 3: soccerteamTwo.chance_freekick();
 					break;
-				case 4: soccerteamTwo.chance_injured();
+				case 4: soccerteamTwo.chance_penalty();
 					break;
 				case 5: soccerteamTwo.chance_penalty();
 					break;
